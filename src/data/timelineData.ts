@@ -21,7 +21,7 @@ export const timelineData: TimelineItem[] = [
     id: '2',
     title: 'Software Developer',
     organization: 'Cualia Ltd.',
-    period: '2022 - 2022',
+    period: 'June 2022 - June 2024',
     description:
       'Focused on building the application while learning development practices and the medical domain in a startup environment.',
     type: 'work',
