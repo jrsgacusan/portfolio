@@ -48,7 +48,7 @@ const Timeline = ({ data }: TimelineProps) => {
                   }`}
                 >
                   <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md dark:shadow-gray-700/50 p-6 hover:shadow-lg dark:hover:shadow-gray-600/50 transition-shadow">
-                    <span className="inline-block px-3 py-1 text-xs font-semibold text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-primary-900 rounded-full mb-3">
+                    <span className="inline-block px-3 py-1 text-xs font-semibold text-primary-800 dark:text-primary-200 bg-primary-100 dark:bg-primary-900 rounded-full mb-3">
                       {item.type === 'work' ? 'Work' : 'Education'}
                     </span>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">

@@ -101,12 +101,13 @@ export const getContactInfo = (): ContactInfo[] => {
       icon: FaPhone,
       label: 'Phone',
       value: personalData.phone,
+      href: `tel:${personalData.phone.replace(/\s/g, '')}`,
     },
     {
       icon: FaMapMarkerAlt,
       label: 'Location',
       value: personalData.location,
-      href: '#',
+      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personalData.location)}`,
     },
   ]
 }

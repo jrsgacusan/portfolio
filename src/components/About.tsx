@@ -35,7 +35,7 @@ const About = () => {
             {skills.map(skill => (
               <span
                 key={skill}
-                className="px-6 py-2 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full font-medium hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors"
+                className="px-6 py-2 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full font-medium hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors"
               >
                 {skill}
               </span>
