@@ -12,7 +12,7 @@ export const timelineData: TimelineItem[] = [
     id: '1',
     title: 'Lead Full-Stack Developer',
     organization: 'Cualia Ltd.',
-    period: 'June 2024 - Present',
+    period: 'June 2024 - February 2026',
     description:
       'Spearheaded and oversaw the entire application stack, including frontend, backend, infrastructure, automations, and deployments.',
     type: 'work',
