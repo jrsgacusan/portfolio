@@ -52,9 +52,9 @@ const Projects = () => {
       id: '3',
       title: 'Receipt Photobooth PWA',
       description:
-        'A progressive web application that transforms digital images into classic receipt-style prints. Features camera integration and Bluetooth connectivity to directly communicate with thermal printers. The backend converts SVG graphics to ESCPOS commands, enabling unique vintage-style printing experiences.',
+        'A progressive web application that transforms digital images into classic receipt-style prints. Features camera integration and Bluetooth connectivity to directly communicate with thermal printers. App converts SVG graphics to ESCPOS commands, enabling unique vintage-style printing experiences.',
       technologies: ['Svelte', 'TypeScript', 'Express', 'Turborepo', 'PWA'],
-      liveUrl: 'https://receipt-photobooth-frontend.vercel.app/',
+      liveUrl: 'https://mirarireceipt.app/',
     },
   ]
 
