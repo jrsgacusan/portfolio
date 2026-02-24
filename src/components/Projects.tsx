@@ -1,4 +1,5 @@
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import mirari from '../assets/mirari.png'
 
 interface Project {
   id: string
@@ -26,7 +27,7 @@ const Projects = () => {
         'Stripe',
         'AI',
       ],
-      liveUrl: 'https://app.cualia.io',
+      liveUrl: 'https://cualia.io',
       image:
         'https://assets.super.so/870ae751-e8f4-442f-9a6a-8bdbaca88e9b/uploads/favicon/29a5f6c4-7e05-4988-a026-2992a18584fa.png',
     },
@@ -55,6 +56,7 @@ const Projects = () => {
         'A progressive web application that transforms digital images into classic receipt-style prints. Features camera integration and Bluetooth connectivity to directly communicate with thermal printers. App converts SVG graphics to ESCPOS commands, enabling unique vintage-style printing experiences.',
       technologies: ['Svelte', 'TypeScript', 'Express', 'Turborepo', 'PWA'],
       liveUrl: 'https://mirarireceipt.app/',
+      image: mirari,
     },
   ]
 
