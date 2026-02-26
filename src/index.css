@@ -12,6 +12,20 @@
   }
 }
 
+.reveal-section {
+  opacity: 0;
+  transform: translateY(24px) scale(0.99);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 @theme {
   --color-primary-50: #f0f9ff;
   --color-primary-100: #e0f2fe;
