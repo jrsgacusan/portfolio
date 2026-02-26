@@ -24,10 +24,8 @@ const Timeline = ({ data }: TimelineProps) => {
         <div className="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto mb-12"></div>
 
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary-300 dark:bg-primary-600 transform md:-translate-x-0.5"></div>
 
-          {/* Timeline items */}
           <div className="space-y-12">
             {data.map((item, index) => (
               <div
@@ -36,10 +34,8 @@ const Timeline = ({ data }: TimelineProps) => {
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
-                {/* Timeline dot */}
                 <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-primary-600 dark:bg-primary-400 rounded-full border-4 border-white dark:border-gray-800 transform md:-translate-x-1/2 z-10"></div>
 
-                {/* Content */}
                 <div
                   className={`ml-12 md:ml-0 md:w-[calc(50%-2rem)] ${
                     index % 2 === 0

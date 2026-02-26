@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { FaMoon, FaSun } from 'react-icons/fa'
-import { useTheme } from '../contexts/ThemeContext'
+import { useTheme } from '../../contexts/ThemeContext'
 
 interface HeaderProps {
   isScrolled: boolean
@@ -48,7 +48,6 @@ const Header = ({ isScrolled }: HeaderProps) => {
             Portfolio
           </a>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <ul className="flex items-center space-x-8">
               {navItems.map(item => (
@@ -75,7 +74,6 @@ const Header = ({ isScrolled }: HeaderProps) => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-3">
             <button
               onClick={toggleTheme}
@@ -94,8 +92,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
+        {isMenuOpen ? (
           <div className="md:hidden mt-4 pb-4">
             <ul className="flex flex-col space-y-4">
               {navItems.map(item => (
@@ -114,7 +111,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
               ))}
             </ul>
           </div>
-        )}
+        ) : null}
       </nav>
     </header>
   )

@@ -1,4 +1,4 @@
-import { getSocialLinks, personalData } from '../data/personalData'
+import { getSocialLinks, personalData } from '../../data/personalData'
 
 const Hero = () => {
   const socialLinks = getSocialLinks()

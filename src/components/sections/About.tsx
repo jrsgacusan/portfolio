@@ -1,4 +1,4 @@
-import { personalData } from '../data/personalData'
+import { personalData } from '../../data/personalData'
 
 const About = () => {
   const { skills, aboutParagraphs } = personalData

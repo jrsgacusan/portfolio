@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { sendEmail } from '../utils/email'
-import { getContactInfo, personalData } from '../data/personalData'
+import { getContactInfo, personalData } from '../../data/personalData'
+import { sendEmail } from '../../utils/email'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -57,13 +57,12 @@ const Contact = () => {
         <div className="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto mb-12"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Information */}
           <div>
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
-              Let's Connect
+              Let&apos;s Connect
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              I'm always open to discussing new opportunities, interesting
+              I&apos;m always open to discussing new opportunities, interesting
               projects, or just having a chat about technology.
             </p>
 
@@ -88,7 +87,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -143,7 +141,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-400 focus:border-transparent outline-none transition resize-none text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
+                  className="w-full resize-none px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-400 focus:border-transparent outline-none transition text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                   placeholder="Your message"
                 />
               </div>
@@ -156,13 +154,13 @@ const Contact = () => {
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
 
-              {submitStatus === 'success' && (
+              {submitStatus === 'success' ? (
                 <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-lg text-green-700 dark:text-green-300">
                   Thank you for your message! I will get back to you soon.
                 </div>
-              )}
+              ) : null}
 
-              {submitStatus === 'error' && (
+              {submitStatus === 'error' ? (
                 <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-300">
                   Failed to send message. Please try again or contact me
                   directly at{' '}
@@ -173,7 +171,7 @@ const Contact = () => {
                     {personalData.email}
                   </a>
                 </div>
-              )}
+              ) : null}
             </form>
           </div>
         </div>
