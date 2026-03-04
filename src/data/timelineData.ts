@@ -14,12 +14,12 @@ export const timelineData: TimelineItem[] = [
     organization: 'Cualia Ltd.',
     period: 'June 2024 - February 2026',
     description:
-      'Spearheaded and oversaw the entire application stack, including frontend, backend, infrastructure, automations, and deployments.',
+      'Led full-stack development at a growing medical SaaS startup serving laboratory and pharmaceutical validation teams, acting as the primary technical owner responsible for system architecture, multi-tenant database design, and overall platform scalability and security.',
     type: 'work',
   },
   {
     id: '2',
-    title: 'Software Developer',
+    title: 'Frontend Engineer',
     organization: 'Cualia Ltd.',
     period: 'June 2022 - June 2024',
     description:
@@ -32,7 +32,7 @@ export const timelineData: TimelineItem[] = [
     organization: 'Goodfrontend.dev',
     period: 'November 2021 - November 2022',
     description:
-      'Assigned to the FitFlop e-commerce project as the sole frontend engineer, learning from experienced senior developers.',
+      'Contributed as a Frontend Engineer for the FitFlop project at Goodfrontend.dev, a large international footwear brand, working within a 12-member development team to support and enhance its global e-commerce platform. Focused primarily on frontend implementation, ensuring responsive, high-performance user interfaces aligned with the brand’s standards and large-scale production requirements.',
     type: 'work',
   },
   {
@@ -41,7 +41,7 @@ export const timelineData: TimelineItem[] = [
     organization: 'Goodfrontend.dev',
     period: 'October 2021 - November 2021',
     description:
-      'Promoted to full-time after one month due to strong commitment and dedication to learning.',
+      'Spent my time learning frontend technologies through online resources and mini projects.',
     type: 'work',
   },
 
@@ -55,7 +55,7 @@ export const timelineData: TimelineItem[] = [
   },
   {
     id: '6',
-    title: 'Frontend Developer Intern',
+    title: 'Frontend Engineer Internship',
     organization: 'IOL Inc.',
     period: 'May 2021 - September 2021',
     description:

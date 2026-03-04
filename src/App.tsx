@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
-import Header from './components/sections/Header'
-import Hero from './components/sections/Hero'
-import About from './components/sections/About'
-import Timeline from './components/sections/Timeline'
-import Projects from './components/sections/Projects'
-import Contact from './components/sections/Contact'
-import Footer from './components/sections/Footer'
+import Header from './sections/Header'
+import Hero from './sections/Hero'
+import About from './sections/About'
+import Timeline from './sections/Timeline'
+import Projects from './sections/Projects'
+import Contact from './sections/Contact'
+import Footer from './sections/Footer'
 import Reveal from './components/Reveal'
+import ChatWidget from './components/ChatWidget'
 import { timelineData } from './data/timelineData'
 
 function App() {
@@ -42,15 +43,17 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      <div className="fixed top-0 left-0 right-0 z-60 h-[2px]  backdrop-blur-sm pointer-events-none">
+      <div
+        className="fixed top-0 left-0 right-0 z-60 h-[2px]  backdrop-blur-sm pointer-events-none"
+        aria-hidden="true"
+      >
         <div
           className="h-full bg-linear-to-r from-cyan-400 via-primary-500 to-indigo-500 shadow-[0_0_12px_rgba(14,165,233,0.9)] transition-[width] duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
-          aria-hidden="true"
         />
       </div>
       <Header isScrolled={isScrolled} />
-      <main>
+      <main id="main">
         <Hero />
         <Reveal>
           <About />
@@ -66,6 +69,13 @@ function App() {
         </Reveal>
       </main>
       <Footer />
+      <ChatWidget
+        src="https://jrsgacusan-portfolio-chat.hf.space"
+        width={850}
+        height={850}
+        buttonLabel="Open chat"
+        panelLabel="Chat"
+      />
     </div>
   )
 }

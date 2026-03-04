@@ -1,0 +1,32 @@
+---
+description: Unit testing and Storybook for components
+alwaysApply: true
+---
+
+# Testing
+
+## Unit tests
+- Every piece of code (components, hooks, utils) must have unit tests.
+- Prefer React Testing Library for component tests.
+- Cover behavior and accessibility, not implementation details.
+
+## Storybook
+- Every **reusable** component must have a Storybook story.
+- Put stories next to the component or in a `*.stories.tsx` file.
+- Document variants, props, and usage in the story.
+
+## Example (Storybook)
+```tsx
+// Button.stories.tsx
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from './Button';
+
+const meta: Meta<typeof Button> = {
+  component: Button,
+  tags: ['autodocs'],
+};
+export default meta;
+
+type Story = StoryObj<typeof Button>;
+export const Primary: Story = { args: { label: 'Primary', variant: 'primary' } };
+```

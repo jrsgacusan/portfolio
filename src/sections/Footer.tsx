@@ -1,4 +1,4 @@
-import { getSocialLinks, personalData } from '../../data/personalData'
+import { getSocialLinks, personalData } from '../data/personalData'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -17,20 +17,21 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="flex space-x-6">
+          <ul className="flex space-x-6 list-none p-0 m-0" role="list">
             {socialLinks.map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
-                aria-label={label}
-              >
-                <Icon size={24} />
-              </a>
+              <li key={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded"
+                  aria-label={label}
+                >
+                  <Icon size={24} aria-hidden="true" />
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </footer>

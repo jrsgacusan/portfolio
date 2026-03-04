@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
-import mirari from '../../assets/mirari.png'
-import Chip from '../Chip'
-import Modal from '../Modal'
-import ProjectCard, { ProjectData } from '../ProjectCard'
+import mirari from '../assets/mirari.png'
+import Chip from '../components/Chip'
+import Modal from '../components/Modal'
+import ProjectCard, { ProjectData } from '../components/ProjectCard'
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState<ProjectData | null>(null)
@@ -120,9 +120,9 @@ const Projects = () => {
           href={activeProject.githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-md bg-gray-900 dark:bg-gray-100 px-4 py-2 text-white dark:text-gray-900 text-sm font-medium hover:opacity-90 transition-opacity"
+          className="inline-flex items-center gap-2 rounded-md bg-gray-900 dark:bg-gray-100 px-4 py-2 text-white dark:text-gray-900 text-sm font-medium hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
         >
-          <FaGithub /> View Code
+          <FaGithub aria-hidden="true" /> View Code
         </a>
       ) : null}
       {activeProject.liveUrl ? (
@@ -130,9 +130,9 @@ const Projects = () => {
           href={activeProject.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-md bg-primary-700 px-4 py-2 text-white text-sm font-medium hover:bg-primary-800 transition-colors"
+          className="inline-flex items-center gap-2 rounded-md bg-primary-700 px-4 py-2 text-white text-sm font-medium hover:bg-primary-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
         >
-          <FaExternalLinkAlt /> Visit Live Project
+          <FaExternalLinkAlt aria-hidden="true" /> Visit Live Project
         </a>
       ) : null}
     </>
@@ -142,12 +142,13 @@ const Projects = () => {
     <section
       id="projects"
       className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900"
+      aria-labelledby="projects-heading"
     >
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 text-center">
+        <h2 id="projects-heading" className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 text-center">
           Featured Projects
         </h2>
-        <div className="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto mb-12"></div>
+        <div className="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto mb-12" role="presentation" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map(project => (
@@ -181,13 +182,13 @@ const Projects = () => {
               <h4 className="mb-2 text-base font-semibold text-gray-900 dark:text-gray-100">
                 Approach
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 list-none pl-0">
                 {activeProject.caseStudy.approach.map(step => (
                   <li
                     key={step}
                     className="flex items-start gap-2 text-gray-600 dark:text-gray-300"
                   >
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" />
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden="true" />
                     <span>{step}</span>
                   </li>
                 ))}
@@ -198,13 +199,13 @@ const Projects = () => {
               <h4 className="mb-2 text-base font-semibold text-gray-900 dark:text-gray-100">
                 Results
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 list-none pl-0">
                 {activeProject.caseStudy.results.map(result => (
                   <li
                     key={result}
                     className="flex items-start gap-2 text-gray-600 dark:text-gray-300"
                   >
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" aria-hidden="true" />
                     <span>{result}</span>
                   </li>
                 ))}

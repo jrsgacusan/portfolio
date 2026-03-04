@@ -1,6 +1,7 @@
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 import Card from './Card'
 import Chip from './Chip'
+import Button from './Button'
 
 export interface ProjectCaseStudy {
   problem: string
@@ -77,21 +78,24 @@ const ProjectCard = ({ project, onViewCaseStudy }: ProjectCardProps) => {
         </div>
 
         <div className="flex gap-4">
-          <button
+          <Button
+            type="button"
+            variant="ghost"
+            size="md"
             onClick={() => onViewCaseStudy(project)}
-            className="flex items-center gap-2 font-semibold text-primary-700 transition-colors hover:text-primary-800 dark:text-primary-300 dark:hover:text-primary-200"
+            className="font-semibold text-primary-700 hover:text-primary-800 dark:text-primary-300 dark:hover:text-primary-200"
           >
             View Case Study
-          </button>
+          </Button>
 
           {project.githubUrl ? (
             <a
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 font-medium text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
+              className="flex items-center gap-2 font-medium text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 rounded"
             >
-              <FaGithub /> Code
+              <FaGithub aria-hidden="true" /> Code
             </a>
           ) : null}
 
@@ -100,9 +104,9 @@ const ProjectCard = ({ project, onViewCaseStudy }: ProjectCardProps) => {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 font-medium text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
+              className="flex items-center gap-2 font-medium text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 rounded"
             >
-              <FaExternalLinkAlt /> Live
+              <FaExternalLinkAlt aria-hidden="true" /> Live
             </a>
           ) : null}
         </div>

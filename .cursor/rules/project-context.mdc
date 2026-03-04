@@ -1,0 +1,28 @@
+---
+description: Use project documentation for smarter decisions
+alwaysApply: true
+---
+
+# Project context & documentation
+
+## Where docs live
+- Project documentation lives in **`docs/`** at the repo root.
+- Files there are the source of truth for architecture, decisions, and conventions.
+
+## Before making code changes
+- **Check `docs/`** for anything relevant to the task (architecture, APIs, patterns, decisions).
+- Prefer approaches that match existing docs; if docs are missing or outdated, suggest updates.
+- For larger or ambiguous changes, infer from `docs/` before implementing; if unclear, ask or note assumptions.
+
+## When to update docs
+- After adding new patterns, conventions, or significant structure.
+- After making architectural or tech choices that future changes should follow.
+- When you discover that existing docs are wrong or incomplete.
+
+## What belongs in docs (examples)
+- **Architecture:** App structure, routing, state, data flow.
+- **Decisions:** Why certain libraries, patterns, or approaches were chosen (ADRs or notes).
+- **APIs & contracts:** Backend endpoints, env vars, shared types, integration points.
+- **Conventions:** Naming, file layout, import rules, style beyond what’s in other rules.
+
+Using `docs/` keeps decisions explicit and helps the AI make consistent, context-aware code changes.

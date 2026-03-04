@@ -1,0 +1,30 @@
+---
+description: Component structure, a11y, and SEO
+alwaysApply: true
+---
+
+# Components
+
+## Location & reuse
+- **Stateless, reusable components** → `src/components/`.
+- Keep them **agnostic**: no business logic or app-specific assumptions; accept data and callbacks via props.
+- App-specific or stateful pieces stay outside `src/components` (e.g. features, pages).
+
+## Accessibility (WCAG first)
+- Design and implement with **WCAG** in mind from the start.
+- Use semantic HTML (`<button>`, `<nav>`, `<main>`, headings in order, etc.).
+- Support keyboard navigation and focus visibility.
+- Images: meaningful `alt` text; decorative images `alt=""` or `role="presentation"`.
+- Forms: visible labels, error messages linked with `aria-describedby`, correct `aria-*` where needed.
+- Prefer visible focus styles; avoid `outline: none` without a replacement.
+
+## SEO & a11y together
+- Page structure: one `<h1>` per page, logical heading hierarchy.
+- Landmarks: `<header>`, `<main>`, `<nav>`, `<footer>` so screen readers and SEO can parse structure.
+- Ensure sufficient color contrast and that info isn’t conveyed by color alone.
+
+## Mobile-first
+- **Design and build for small viewports first**, then enhance for larger screens (e.g. Tailwind `sm:`, `md:`, `lg:`).
+- Every component must be **usable and readable on mobile**: touch targets at least 44×44px, readable text without zoom, no horizontal scroll unless intentional.
+- Test layouts at 320px–480px width; use responsive utilities so content stacks or reflows appropriately.
+- Avoid fixed dimensions that break on small screens; prefer `max-w-`, `min-h-`, `w-full`, and responsive units.
