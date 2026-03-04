@@ -10,6 +10,11 @@
   body {
     @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased;
   }
+
+  a[href],
+  button:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
 .reveal-section {

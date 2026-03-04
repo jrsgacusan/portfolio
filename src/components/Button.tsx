@@ -39,7 +39,7 @@ const SIZE_CLASSES: Record<ButtonSize, string> = {
 }
 
 const BASE_CLASSES =
-  'inline-flex items-center justify-center gap-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none dark:focus:ring-offset-gray-900 [&_svg]:shrink-0'
+  'cursor-pointer inline-flex items-center justify-center gap-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none dark:focus:ring-offset-gray-900 [&_svg]:shrink-0'
 
 const Button = ({
   variant = 'primary',
