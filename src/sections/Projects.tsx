@@ -10,7 +10,8 @@ const Projects = () => {
 
   const projects: ProjectData[] = [
     {
-      id: '1',
+      id: 'cualia',
+      category: 'contributed',
       title: 'Cualia.io',
       description:
         'Cualia.io is a cloud-based platform that helps labs do Method Validation and Performance Evaluations. Designed for ISO Certification and audit readiness, Cualia.io ensures labs stay on track with accreditation standards.',
@@ -47,7 +48,8 @@ const Projects = () => {
         'https://assets.super.so/870ae751-e8f4-442f-9a6a-8bdbaca88e9b/uploads/favicon/29a5f6c4-7e05-4988-a026-2992a18584fa.png',
     },
     {
-      id: '2',
+      id: 'fitflop',
+      category: 'contributed',
       title: 'FitFlop',
       description:
         'Contributed to an already well-established, high-traffic international e-commerce storefront for a leading footwear brand. Focused on maintaining core customer journeys, shipping new features, and improving frontend performance for faster browsing and checkout.',
@@ -84,7 +86,8 @@ const Projects = () => {
         'https://1000marcas.net/wp-content/uploads/2021/05/FitFlop-logo-1.png',
     },
     {
-      id: '3',
+      id: 'receipt-photobooth',
+      category: 'side',
       title: 'Receipt Photobooth PWA',
       description:
         'A progressive web application that transforms digital images into classic receipt-style prints. Features camera integration and Bluetooth connectivity to directly communicate with thermal printers. App converts SVG graphics to ESCPOS commands, enabling unique vintage-style printing experiences.',
@@ -110,6 +113,32 @@ const Projects = () => {
       },
       liveUrl: 'https://mirarireceipt.app/',
       image: mirari,
+    },
+    {
+      id: 'closi',
+      category: 'side',
+      title: 'Closi.io',
+      description:
+        'A CRM built for creators to manage brand deals, partnerships, and collaborations in one place. Streamline outreach, track deals, and keep creator–brand relationships organized.',
+      technologies: [],
+      highlights: [
+        'CRM tailored for creators and brand deals',
+        'Central place to manage partnerships and collaborations',
+      ],
+      impact: 'CRM for creators',
+      caseStudy: {
+        problem:
+          'Creators need a simple way to track brand deals, outreach, and partnerships without using generic business CRMs that don’t fit creator workflows.',
+        approach: [
+          'Designed a creator-focused CRM around deal pipelines and brand relationships.',
+          'Built a single place to manage deals, contacts, and collaboration status.',
+        ],
+        results: [
+          'Enables creators to manage brand deals and partnerships in one tool.',
+          'Live at closi.io for creators to try.',
+        ],
+      },
+      liveUrl: 'https://closi.io/',
     },
   ]
 
@@ -146,7 +175,7 @@ const Projects = () => {
     >
       <div className="container mx-auto max-w-6xl">
         <h2 id="projects-heading" className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 text-center">
-          Featured Projects
+          Projects
         </h2>
         <div className="h-1 w-20 bg-primary-600 dark:bg-primary-400 mx-auto mb-12" role="presentation" />
 
@@ -178,50 +207,56 @@ const Projects = () => {
               </p>
             </div>
 
-            <div>
-              <h4 className="mb-2 text-base font-semibold text-gray-900 dark:text-gray-100">
-                Approach
-              </h4>
-              <ul className="space-y-2 list-none pl-0">
-                {activeProject.caseStudy.approach.map(step => (
-                  <li
-                    key={step}
-                    className="flex items-start gap-2 text-gray-600 dark:text-gray-300"
-                  >
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden="true" />
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="mb-2 text-base font-semibold text-gray-900 dark:text-gray-100">
-                Results
-              </h4>
-              <ul className="space-y-2 list-none pl-0">
-                {activeProject.caseStudy.results.map(result => (
-                  <li
-                    key={result}
-                    className="flex items-start gap-2 text-gray-600 dark:text-gray-300"
-                  >
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" aria-hidden="true" />
-                    <span>{result}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="mb-2 text-base font-semibold text-gray-900 dark:text-gray-100">
-                Technology Stack
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {activeProject.technologies.map(tech => (
-                  <Chip key={tech}>{tech}</Chip>
-                ))}
+            {activeProject.caseStudy.approach.length > 0 ? (
+              <div>
+                <h4 className="mb-2 text-base font-semibold text-gray-900 dark:text-gray-100">
+                  Approach
+                </h4>
+                <ul className="space-y-2 list-none pl-0">
+                  {activeProject.caseStudy.approach.map(step => (
+                    <li
+                      key={step}
+                      className="flex items-start gap-2 text-gray-600 dark:text-gray-300"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden="true" />
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
+            ) : null}
+
+            {activeProject.caseStudy.results.length > 0 ? (
+              <div>
+                <h4 className="mb-2 text-base font-semibold text-gray-900 dark:text-gray-100">
+                  Results
+                </h4>
+                <ul className="space-y-2 list-none pl-0">
+                  {activeProject.caseStudy.results.map(result => (
+                    <li
+                      key={result}
+                      className="flex items-start gap-2 text-gray-600 dark:text-gray-300"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" aria-hidden="true" />
+                      <span>{result}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {activeProject.technologies.length > 0 ? (
+              <div>
+                <h4 className="mb-2 text-base font-semibold text-gray-900 dark:text-gray-100">
+                  Technology Stack
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {activeProject.technologies.map(tech => (
+                    <Chip key={tech}>{tech}</Chip>
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </div>
         ) : null}
       </Modal>

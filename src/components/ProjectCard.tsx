@@ -9,6 +9,8 @@ export interface ProjectCaseStudy {
   results: string[]
 }
 
+export type ProjectCategory = 'contributed' | 'side'
+
 export interface ProjectData {
   id: string
   title: string
@@ -17,6 +19,7 @@ export interface ProjectData {
   highlights: string[]
   impact: string
   caseStudy: ProjectCaseStudy
+  category: ProjectCategory
   githubUrl?: string
   liveUrl?: string
   image?: string
@@ -25,6 +28,11 @@ export interface ProjectData {
 interface ProjectCardProps {
   project: ProjectData
   onViewCaseStudy: (project: ProjectData) => void
+}
+
+const CATEGORY_LABELS: Record<ProjectCategory, string> = {
+  contributed: 'Contributed to',
+  side: 'Side project',
 }
 
 const ProjectCard = ({ project, onViewCaseStudy }: ProjectCardProps) => {
@@ -43,12 +51,22 @@ const ProjectCard = ({ project, onViewCaseStudy }: ProjectCardProps) => {
           </div>
         )}
         <div className="absolute inset-0 bg-linear-to-t from-black/45 via-black/15 to-transparent" />
-        <Chip
-          variant="primary"
-          className="absolute right-4 top-4 bg-white/90 text-primary-700 dark:bg-gray-900/80 dark:text-primary-300"
-        >
-          {project.impact}
-        </Chip>
+        <div className="absolute left-4 top-4 flex flex-col items-start gap-2">
+          <Chip
+            variant="neutral"
+            className="shrink-0 bg-white/90 text-gray-700 dark:bg-gray-900/80 dark:text-gray-200 text-xs"
+          >
+            {CATEGORY_LABELS[project.category]}
+          </Chip>
+          <span className="w-full max-w-[min(100%,16rem)]">
+            <Chip
+              variant="primary"
+              className="inline-block max-w-full whitespace-normal break-words bg-white/90 text-primary-700 dark:bg-gray-900/80 dark:text-primary-300 text-xs"
+            >
+              {project.impact}
+            </Chip>
+          </span>
+        </div>
       </div>
 
       <div className="p-6">

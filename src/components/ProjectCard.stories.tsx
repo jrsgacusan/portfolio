@@ -3,6 +3,7 @@ import ProjectCard, { type ProjectData } from './ProjectCard'
 
 const mockProject: ProjectData = {
   id: 'story-1',
+  category: 'contributed',
   title: 'Example Project',
   description:
     'A short description of the project and what it does. Highlights key outcomes and technologies.',
@@ -61,6 +62,18 @@ export const LiveOnly: Story = {
       id: 'story-3',
       title: 'Live link only',
       githubUrl: undefined,
+    },
+    onViewCaseStudy: () => {},
+  },
+}
+
+export const SideProject: Story = {
+  args: {
+    project: {
+      ...mockProject,
+      id: 'story-4',
+      title: 'Side project',
+      category: 'side',
     },
     onViewCaseStudy: () => {},
   },
